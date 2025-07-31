@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <form onsubmit="validate(event)">
+        <input type="text" id="email" placeholder="Email"><br><br>
+        <input type="password" id="pass" placeholder="Password"><br><br>
+        <input type="text" id="age" placeholder="Age"><br><br>
+        <button type="submit">Submit</button>
+        <p id="msg"></p>
+    </form>
+
+    <script>
+        function whoRU(){
+            e.preventdefult();
+            const email = document.getElementById("email").value;
+            const pass = document.getElementById("pass").value;
+            const age = document.getElementById("age").value;
+            const msg = document.getElementById("msg").value;
+
+            let message = "";
+
+            if(email == ""){
+                message = "Enter your email first."
+                msg.style.color = red;
+            } else if(pass == ""){
+                message = "Enter your password first."
+                msg.style.color = red;
+            } else if (age == "") {
+                message = "Enter your age first."
+                msg.style.color = red;
+            }else{
+                message = "You are set!(What i mean is that your done loging in :)"
+                msg.style.color = green;
+            }
+            msg.innerText = message;
+        }
+    </script>
+</body>
+</html>
